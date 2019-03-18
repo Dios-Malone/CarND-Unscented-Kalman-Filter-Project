@@ -1,11 +1,13 @@
 #ifndef UKF_H
 #define UKF_H
 
-#include "Eigen/Dense"
 #include "measurement_package.h"
+#include "Eigen/Dense"
+
 
 class UKF {
- public:
+public:
+
   /**
    * Constructor
    */
@@ -95,6 +97,12 @@ class UKF {
 
   // Sigma point spreading parameter
   double lambda_;
+
+  // the current NIS for radar
+  double NIS_radar_;
+
+  // the current NIS for laser
+  double NIS_laser_;
 };
 
 #endif  // UKF_H
